@@ -5,14 +5,13 @@ from datetime import date,timedelta
 app = Flask(__name__)
 
 @app.route('/')
-@app.route('/<skip>')
-@app.route('/<back>')
-def main(skip=None, back=None):
+@app.route('/<path>')
+def main(path=None):
     today = date.today()
-    if skip:
-        tom = today + timedelta(days = 1) 
+    if path == 'skip':
+        tom = today + timedelta(days = 1)
         dt = tom.strftime("%d/%-m/%Y")
-    elif back:
+    elif path == 'back':
         yestd = today - timedelta(days = 1)
         dt = yestd.strftime("%d/%-m/%Y")
     else:
