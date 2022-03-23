@@ -14,7 +14,7 @@ def main(skip=None, back=None):
         dt = tom.strftime("%d/%-m/%Y")
     elif back:
         yestd = today - timedelta(days = 1)
-        dt = tom.strftime("%d/%-m/%Y")
+        dt = yestd.strftime("%d/%-m/%Y")
     else:
         dt = today.strftime("%d/%-m/%Y")
 
